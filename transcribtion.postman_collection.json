@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "8da589f7-7440-4a0e-8d18-98542ebed8c8",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19939937",
+		"_collection_link": "https://gold-eclipse-281016.postman.co/workspace/meeeh~38a8e2fe-8ba0-4885-9e1a-627a725fb0a5/collection/19939937-8da589f7-7440-4a0e-8d18-98542ebed8c8?action=share&source=collection_link&creator=19939937"
+	},
+	"item": [
+		{
+			"name": "Save Transcribtion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"audioUrl\": \"https://example.com/sample.mp3\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{transcribtionUrl}}/api/transcription",
+					"host": [
+						"{{transcribtionUrl}}"
+					],
+					"path": [
+						"api",
+						"transcription"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/transcription \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"audioUrl\": \"https://example.com/sample.mp3\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transcribtions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{transcribtionUrl}}/api/transcriptions?limit=2&page=2",
+					"host": [
+						"{{transcribtionUrl}}"
+					],
+					"path": [
+						"api",
+						"transcriptions"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Azure Transcribtion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"audioUrl\": \"https://example.com/sample.mp3\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{transcribtionUrl}}/api/azure-transcription",
+					"host": [
+						"{{transcribtionUrl}}"
+					],
+					"path": [
+						"api",
+						"azure-transcription"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/azure-transcription \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"audioUrl\": \"https://example.com/sample.mp3\"\n  }'"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "transcribtionUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
